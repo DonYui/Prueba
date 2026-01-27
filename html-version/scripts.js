@@ -3,21 +3,116 @@ const menuToggle = document.getElementById('menuToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuIcon = menuToggle.querySelector('.menu-icon');
 const closeIcon = menuToggle.querySelector('.close-icon');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+function closeMobileMenu() {
+  mobileMenu.classList.add('hidden');
+  menuIcon.classList.remove('hidden');
+  closeIcon.classList.add('hidden');
+}
 
 menuToggle.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
-  menuIcon.classList.toggle('hidden');
-  closeIcon.classList.toggle('hidden');
+  const isHidden = mobileMenu.classList.contains('hidden');
+  if (isHidden) {
+    mobileMenu.classList.remove('hidden');
+    menuIcon.classList.add('hidden');
+    closeIcon.classList.remove('hidden');
+  } else {
+    closeMobileMenu();
+  }
 });
 
 // Close mobile menu when clicking a link
-const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
 mobileNavLinks.forEach(link => {
   link.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-    menuIcon.classList.remove('hidden');
-    closeIcon.classList.add('hidden');
+    closeMobileMenu();
   });
+});
+
+// Smooth scroll mejorado con offset y animación
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    
+    if (targetId === '#') return;
+    
+    const target = document.querySelector(targetId);
+    if (target) {
+      // Offset para el header fijo
+      const headerHeight = document.querySelector('.header').offsetHeight;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = targetPosition - headerHeight - 20; // 20px extra de espacio
+      
+      // Animación suave
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Actualizar clase activa en los enlaces de navegación
+      updateActiveNavLink(targetId);
+    }
+  });
+});
+
+// Función para actualizar el enlace activo
+function updateActiveNavLink(targetId) {
+  // Remover clase activa de todos los enlaces
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+  });
+  
+  // Agregar clase activa al enlace correspondiente
+  const activeLink = document.querySelector(`.nav-link[href="${targetId}"]`);
+  if (activeLink) {
+    activeLink.classList.add('active');
+  }
+}
+
+// Actualizar enlace activo al hacer scroll
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section[id]');
+  const scrollPosition = window.scrollY + 100; // Offset para detectar sección
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    const sectionId = `#${section.id}`;
+    
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      updateActiveNavLink(sectionId);
+    }
+  });
+});
+
+// Al cargar la página, establecer el enlace activo según la sección actual
+window.addEventListener('load', () => {
+  const currentHash = window.location.hash;
+  if (currentHash) {
+    updateActiveNavLink(currentHash);
+  } else {
+    // Si no hay hash, estamos en el inicio
+    updateActiveNavLink('#inicio');
+  }
+});
+
+// Asegurar que el logo también tenga scroll suave
+document.querySelector('.logo').addEventListener('click', (e) => {
+  e.preventDefault();
+  const target = document.querySelector('#inicio');
+  if (target) {
+    const headerHeight = document.querySelector('.header').offsetHeight;
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = targetPosition - headerHeight;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+    
+    updateActiveNavLink('#inicio');
+  }
 });
 
 // Testimonials Carousel
@@ -162,20 +257,148 @@ contactForm.addEventListener('submit', (e) => {
   contactForm.reset();
 });
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const headerOffset = 80;
-      const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+// Infinite Carousel con Animaciones Avanzadas (Simplificado - Sin Botones Manuales)
+class InfiniteCarousel {
+  constructor() {
+    this.track = document.getElementById('infiniteCarouselTrack');
+    
+    this.industriesData = [
+      {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+        </svg>`,
+        title: "Manufactura",
+        description: "Optimización de producción",
+        clients: "+45 clientes"
+      },
+      {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>`,
+        title: "Retail",
+        description: "Gestión omnicanal",
+        clients: "+30 clientes"
+      },
+      {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+        </svg>`,
+        title: "Salud",
+        description: "Cumplimiento normativo",
+        clients: "+25 clientes"
+      },
+      {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="1" x2="12" y2="23"></line>
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>`,
+        title: "Finanzas",
+        description: "Control y compliance",
+        clients: "+20 clientes"
+      },
+      {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="3" width="15" height="13"></rect>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+          <circle cx="5.5" cy="18.5" r="2.5"></circle>
+          <circle cx="18.5" cy="18.5" r="2.5"></circle>
+        </svg>`,
+        title: "Logística",
+        description: "Trazabilidad completa",
+        clients: "+35 clientes"
+      },
+      {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m7.5 4.27 9 5.15"></path>
+          <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+          <path d="m3.3 7 8.7 5 8.7-5"></path>
+          <path d="M12 22V12"></path>
+        </svg>`,
+        title: "Distribución",
+        description: "Cadena de suministro",
+        clients: "+28 clientes"
+      },
+      {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10H12V2Z"></path>
+          <path d="M12 2a10 10 0 0 1 10 10"></path>
+          <path d="M12 12 2.1 9.1"></path>
+        </svg>`,
+        title: "Agroindustria",
+        description: "Gestión de cultivos",
+        clients: "+18 clientes"
+      },
+      {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        </svg>`,
+        title: "Turismo",
+        description: "Experiencia del cliente",
+        clients: "+15 clientes"
+      }
+    ];
+    
+    this.init();
+  }
+  
+  init() {
+    this.createCarousel();
+    this.setupEventListeners();
+  }
+  
+  createCarousel() {
+    this.track.innerHTML = '';
+    
+    // Duplicar los slides para crear el efecto infinito
+    const slidesToShow = [...this.industriesData, ...this.industriesData];
+    
+    slidesToShow.forEach((industry, index) => {
+      const slide = document.createElement('div');
+      slide.className = 'infinite-carousel-slide';
+      
+      slide.innerHTML = `
+        <div class="industry-icon">${industry.icon}</div>
+        <h3>${industry.title}</h3>
+        <p>${industry.description}</p>
+        <span class="industry-clients">${industry.clients}</span>
+      `;
+      
+      this.track.appendChild(slide);
+    });
+    
+    // Aplicar animación inicial
+    this.track.style.animation = `infinite-scroll 40s linear infinite`;
+  }
+  
+  setupEventListeners() {
+    // Pausar animación al hacer hover
+    this.track.addEventListener('mouseenter', () => {
+      this.track.style.animationPlayState = 'paused';
+    });
+    
+    this.track.addEventListener('mouseleave', () => {
+      this.track.style.animationPlayState = 'running';
+    });
+    
+    // Touch events para móvil
+    this.track.addEventListener('touchstart', () => {
+      this.track.style.animationPlayState = 'paused';
+    });
+    
+    this.track.addEventListener('touchend', () => {
+      // Reanudar animación después de 1 segundo
+      setTimeout(() => {
+        this.track.style.animationPlayState = 'running';
+      }, 1000);
+    });
+  }
+}
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  });
+// Inicializar todo cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+  // Inicializar el carrusel infinito simplificado
+  new InfiniteCarousel();
 });

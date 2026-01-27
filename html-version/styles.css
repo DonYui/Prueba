@@ -132,13 +132,49 @@ img {
   }
 }
 
-.nav-desktop a {
+/* Estilos para los enlaces de navegación */
+.nav-desktop .nav-link,
+.mobile-nav .nav-link {
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
   font-size: 0.875rem;
   color: #666;
-  transition: color 0.2s ease;
 }
 
-.nav-desktop a:hover {
+.nav-desktop .nav-link::after,
+.mobile-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #ff020f 0%, #990009 100%);
+  transition: width 0.3s ease;
+}
+
+.nav-desktop .nav-link:hover::after,
+.mobile-nav .nav-link:hover::after,
+.nav-desktop .nav-link.active::after,
+.mobile-nav .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-desktop .nav-link:hover,
+.mobile-nav .nav-link:hover,
+.nav-desktop .nav-link.active,
+.mobile-nav .nav-link.active {
+  color: #ff020f;
+}
+
+/* Estilo para el botón de inicio */
+.nav-desktop a[href="#inicio"] {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.nav-desktop a[href="#inicio"]:hover {
   color: #ff020f;
 }
 
@@ -609,78 +645,296 @@ img {
   line-height: 1.6;
 }
 
-/* Industries Section */
-.industries {
-  padding: 5rem 0;
-  background: white;
+/* Carrusel Infinito - Estilos Avanzados */
+.infinite-carousel-container {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0;
+  margin: 0 -1rem;
 }
 
-.industries-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+.infinite-carousel-track {
+  display: flex;
+  gap: 2rem;
+  animation: infinite-scroll 40s linear infinite;
+  padding: 1rem;
+  will-change: transform;
 }
 
-@media (min-width: 640px) {
-  .industries-grid {
-    grid-template-columns: repeat(3, 1fr);
+.infinite-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.infinite-carousel-slide {
+  flex: 0 0 280px;
+  min-width: 280px;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid rgba(255, 2, 15, 0.1);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.infinite-carousel-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff020f, #990009);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.infinite-carousel-slide:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(255, 2, 15, 0.15);
+  border-color: rgba(255, 2, 15, 0.3);
+}
+
+.infinite-carousel-slide:hover::before {
+  transform: scaleX(1);
+}
+
+/* Efecto de gradiente en los bordes */
+.carousel-gradient-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-gradient-overlay.left {
+  left: 0;
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.carousel-gradient-overlay.right {
+  right: 0;
+  background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+@media (max-width: 768px) {
+  .carousel-gradient-overlay {
+    width: 80px;
   }
 }
 
-@media (min-width: 1024px) {
-  .industries-grid {
-    grid-template-columns: repeat(4, 1fr);
+/* Animación del carrusel infinito */
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-280px * 8 - 2rem * 8));
   }
 }
 
-.industry-card {
-  padding: 1.5rem;
-  background: #fafafa;
-  border-radius: 1rem;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.industry-card:hover {
-  background: white;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-}
-
-.industry-icon {
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  background: #e5e5e5;
+/* Controles del carrusel infinito */
+.infinite-carousel-controls {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  z-index: 3;
+  position: relative;
+}
+
+.infinite-carousel-btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #e5e5e5;
   color: #1a1a1a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.infinite-carousel-btn:hover {
+  background: linear-gradient(135deg, #ff020f 0%, #990009 100%);
+  color: white;
+  border-color: transparent;
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 2, 15, 0.3);
+}
+
+.infinite-carousel-btn:active {
+  transform: scale(0.95) translateY(0);
+}
+
+.infinite-carousel-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.current-slide {
+  color: #ff020f;
+}
+
+.total-slides {
+  color: #666;
+}
+
+/* Indicador de autoplay */
+.autoplay-indicator {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #666;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.autoplay-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff020f;
+  animation: autoplay-pulse 1.5s infinite;
+}
+
+@keyframes autoplay-pulse {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.infinite-carousel-container:hover .autoplay-indicator {
+  opacity: 1;
+}
+
+/* Estilos para las tarjetas dentro del carrusel */
+.infinite-carousel-slide .industry-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff020f 0%, #990009 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 1.75rem;
+  transition: all 0.4s ease;
+}
+
+.infinite-carousel-slide:hover .industry-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 40px rgba(255, 2, 15, 0.3);
+}
+
+.infinite-carousel-slide h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.infinite-carousel-slide p {
+  font-size: 0.875rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.infinite-carousel-slide .industry-clients {
+  display: block;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ff020f;
+  background: rgba(255, 2, 15, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  margin: 0 auto;
+  width: fit-content;
   transition: all 0.3s ease;
 }
 
-.industry-card:hover .industry-icon {
-  background: linear-gradient(135deg, #ff020f 0%, #000000 100%);
-  color: white;
+.infinite-carousel-slide:hover .industry-clients {
+  background: rgba(255, 2, 15, 0.15);
+  transform: translateY(-2px);
 }
 
-.industry-card h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 0.25rem;
+/* Responsive para el carrusel infinito */
+@media (max-width: 768px) {
+  .infinite-carousel-slide {
+    flex: 0 0 240px;
+    min-width: 240px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .infinite-carousel-track {
+    gap: 1.5rem;
+  }
+  
+  @keyframes infinite-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-240px * 8 - 1.5rem * 8));
+    }
+  }
+  
+  .infinite-carousel-controls {
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .infinite-carousel-btn {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
-.industry-card p {
-  font-size: 0.75rem;
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-.industry-clients {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #ff020f;
+@media (max-width: 480px) {
+  .infinite-carousel-slide {
+    flex: 0 0 200px;
+    min-width: 200px;
+  }
+  
+  @keyframes infinite-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-200px * 8 - 1.5rem * 8));
+    }
+  }
 }
 
 /* Testimonials Section */
@@ -1000,4 +1254,3 @@ img {
 .footer-social a:hover {
   background: #ff020f;
 }
-

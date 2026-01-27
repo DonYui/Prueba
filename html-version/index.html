@@ -11,7 +11,11 @@
   <style>
       html {
         scroll-behavior: smooth;
-
+        scroll-padding-top: 80px;
+      }
+      
+      section {
+        scroll-margin-top: 80px;
       }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,17 +26,17 @@
   <!-- Header -->
   <header class="header" id="header">
     <div class="header-container">
-      <a href="#" class="logo">
+      <a href="#inicio" class="logo">
         <img src="images/logo.png" alt="Innology Services" class="logo-img">
       </a>
       
       <nav class="nav-desktop">
-        <a href="#inicio" class="nav-link">Inicio</a> 
-        <a href="#servicios">Servicios</a>
-        <a href="#porque-elegirnos">Por qué Elegirnos</a>
-        <a href="#industrias">Industrias</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#porque-elegirnos" class="nav-link">Por qué Elegirnos</a>
+        <a href="#industrias" class="nav-link">Industrias</a>
+        <a href="#testimonios" class="nav-link">Testimonios</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
       </nav>
     
 
@@ -71,11 +75,11 @@
     <div class="mobile-menu hidden" id="mobileMenu">
       <nav class="mobile-nav">
         <a href="#inicio" class="nav-link">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#porque-elegirnos">Por qué Elegirnos</a>
-        <a href="#industrias">Industrias</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#porque-elegirnos" class="nav-link">Por qué Elegirnos</a>
+        <a href="#industrias" class="nav-link">Industrias</a>
+        <a href="#testimonios" class="nav-link">Testimonios</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
       </nav>
       <div class="mobile-social">
         <a href="https://www.facebook.com/share/17918uLhT8/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -360,7 +364,7 @@
     </div>
   </section>
 
-  <!-- Industries Section -->
+  <!-- Industries Section - Carrusel Infinito -->
   <section class="industries" id="industrias">
     <div class="container">
       <div class="section-header">
@@ -368,98 +372,22 @@
         <h2>Experiencia en múltiples sectores</h2>
         <p>Conocemos las particularidades y desafíos de cada industria para ofrecer soluciones verdaderamente adaptadas.</p>
       </div>
-      <div class="industries-grid">
-        <div class="industry-card">
-          <div class="industry-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
-            </svg>
-          </div>
-          <h3>Manufactura</h3>
-          <p>Optimización de producción</p>
-          <span class="industry-clients">+45 clientes</span>
+      
+      <!-- Carrusel Infinito con Animaciones -->
+      <div class="infinite-carousel-container">
+        <div class="infinite-carousel-track" id="infiniteCarouselTrack">
+          <!-- Las tarjetas se generarán dinámicamente con JavaScript -->
         </div>
-        <div class="industry-card">
-          <div class="industry-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="9" cy="21" r="1"></circle>
-              <circle cx="20" cy="21" r="1"></circle>
-              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-            </svg>
-          </div>
-          <h3>Retail</h3>
-          <p>Gestión omnicanal</p>
-          <span class="industry-clients">+30 clientes</span>
-        </div>
-        <div class="industry-card">
-          <div class="industry-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
-          </div>
-          <h3>Salud</h3>
-          <p>Cumplimiento normativo</p>
-          <span class="industry-clients">+25 clientes</span>
-        </div>
-        <div class="industry-card">
-          <div class="industry-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="1" x2="12" y2="23"></line>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-          </div>
-          <h3>Finanzas</h3>
-          <p>Control y compliance</p>
-          <span class="industry-clients">+20 clientes</span>
-        </div>
-        <div class="industry-card">
-          <div class="industry-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="1" y="3" width="15" height="13"></rect>
-              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-              <circle cx="5.5" cy="18.5" r="2.5"></circle>
-              <circle cx="18.5" cy="18.5" r="2.5"></circle>
-            </svg>
-          </div>
-          <h3>Logística</h3>
-          <p>Trazabilidad completa</p>
-          <span class="industry-clients">+35 clientes</span>
-        </div>
-        <div class="industry-card">
-          <div class="industry-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m7.5 4.27 9 5.15"></path>
-              <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
-              <path d="m3.3 7 8.7 5 8.7-5"></path>
-              <path d="M12 22V12"></path>
-            </svg>
-          </div>
-          <h3>Distribución</h3>
-          <p>Cadena de suministro</p>
-          <span class="industry-clients">+28 clientes</span>
-        </div>
-        <div class="industry-card">
-          <div class="industry-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2a10 10 0 1 0 10 10H12V2Z"></path>
-              <path d="M12 2a10 10 0 0 1 10 10"></path>
-              <path d="M12 12 2.1 9.1"></path>
-            </svg>
-          </div>
-          <h3>Agroindustria</h3>
-          <p>Gestión de cultivos</p>
-          <span class="industry-clients">+18 clientes</span>
-        </div>
-        <div class="industry-card">
-          <div class="industry-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-            </svg>
-          </div>
-          <h3>Turismo</h3>
-          <p>Experiencia del cliente</p>
-          <span class="industry-clients">+15 clientes</span>
+        
+        <!-- Overlay de gradiente para efecto de desvanecimiento -->
+        <div class="carousel-gradient-overlay left"></div>
+        <div class="carousel-gradient-overlay right"></div>
+        
+        
+        <!-- Indicador de autoplay -->
+        <div class="autoplay-indicator">
+          <div class="autoplay-dot"></div>
+          <span>Auto-scroll activado</span>
         </div>
       </div>
     </div>
