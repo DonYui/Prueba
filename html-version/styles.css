@@ -1973,3 +1973,69 @@ img {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+}
+
+.whatsapp-float a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float a:hover {
+  background: #128C7E;
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float svg {
+  color: white;
+  width: 32px;
+  height: 32px;
+}
+
+/* Pulse animation */
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-float a {
+  animation: pulse-whatsapp 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .whatsapp-float a {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+}
