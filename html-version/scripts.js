@@ -445,19 +445,6 @@ if (resultsSection) {
   statsObserver.observe(resultsSection);
 }
 
-// Blog hover effects
-const blogCards = document.querySelectorAll('.blog-card');
-blogCards.forEach(card => {
-  card.addEventListener('mouseenter', function() {
-    this.style.cursor = 'pointer';
-  });
-  
-  card.addEventListener('click', function() {
-    // Implementar navegación a artículos completos aquí
-    console.log('Blog article clicked');
-  });
-});
-
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   new InfiniteCarousel();
