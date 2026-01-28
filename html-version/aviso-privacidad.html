@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aviso de Privacidad - Innology Services. Conoce cómo protegemos tu información personal y tus derechos de privacidad.">
+  <title>Aviso de Privacidad | Innology Services</title>
+  <link rel="icon" href="images/favicon.ico" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+    
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    .privacy-page-hero {
+      background: linear-gradient(135deg, #ff020f 0%, #660008 50%, #000000 100%);
+      padding-top: 6rem;
+      padding-bottom: 2rem;
+      margin-bottom: 0;
+    }
+
+    .privacy-page-hero .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 400px;
+    }
+
+    .privacy-page-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    @media (min-width: 640px) {
+      .privacy-page-hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .privacy-page-hero p {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+    }
+
+    .privacy-content {
+      padding: 4rem 0;
+      background: white;
+    }
+
+    .privacy-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .privacy-section {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .privacy-section:last-child {
+      border-bottom: none;
+    }
+
+    .privacy-section h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .privacy-section h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(135deg, #ff020f 0%, #990009 100%);
+      border-radius: 2px;
+    }
+
+    .privacy-section h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .privacy-section h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .privacy-section p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-section ul {
+      margin: 1.5rem 0;
+      padding-left: 2rem;
+    }
+
+    .privacy-section li {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+
+    .privacy-section ul li::marker {
+      color: #ff020f;
+      font-weight: 600;
+    }
+
+    .privacy-highlight {
+      background: rgba(255, 2, 15, 0.08);
+      border-left: 4px solid #ff020f;
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 0.5rem;
+    }
+
+    .privacy-highlight p {
+      margin: 0;
+      font-weight: 500;
+      color: #1a1a1a;
+    }
+
+    .back-to-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #ff020f 0%, #990009 100%);
+      color: white;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      margin-top: 2rem;
+    }
+
+    .back-to-home:hover {
+      background: linear-gradient(135deg, #cc010c 0%, #660006 100%);
+      transform: translateX(-4px);
+    }
+
+    .back-to-home svg {
+      width: 18px;
+      height: 18px;
+      margin-right: -0.25rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+    }
+
+    .breadcrumb a {
+      color: #ff020f;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: #cc010c;
+    }
+
+    .breadcrumb span {
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .privacy-page-hero h1 {
+        font-size: 1.875rem;
+      }
+
+      .privacy-page-hero p {
+        font-size: 1rem;
+      }
+
+      .privacy-section h2 {
+        font-size: 1.375rem;
+      }
+
+      .privacy-section h3 {
+        font-size: 1.125rem;
+      }
+    }
+
+    /* Table of Contents */
+    .table-of-contents {
+      background: #f8f8f8;
+      border: 1px solid #e5e5e5;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .table-of-contents h3 {
+      margin-top: 0;
+      color: #1a1a1a;
+    }
+
+    .table-of-contents ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .table-of-contents li {
+      margin-bottom: 0.75rem;
+    }
+
+    .table-of-contents a {
+      color: #ff020f;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .table-of-contents a:hover {
+      color: #cc010c;
+      text-decoration: underline;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="index.html#inicio" class="logo">
+        <img src="images/logo.png" alt="Innology Services" class="logo-img">
+      </a>
+      
+      <nav class="nav-desktop">
+        <a href="index.html#inicio" class="nav-link">Inicio</a>
+        <a href="index.html#servicios" class="nav-link">Servicios</a>
+        <a href="index.html#resultados" class="nav-link">Resultados</a>
+        <a href="index.html#porque-elegirnos" class="nav-link">Por qué Elegirnos</a>
+        <a href="index.html#industrias" class="nav-link">Industrias</a>
+        <a href="index.html#testimonios" class="nav-link">Testimonios</a>
+        <a href="index.html#blog" class="nav-link">Blog</a>
+        <a href="index.html#contacto" class="nav-link">Contacto</a>
+      </nav>
+    
+      <div class="social-desktop">
+        <a href="https://www.facebook.com/share/17918uLhT8/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/innology.services" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/innology-services/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+      </div>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg class="close-icon hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden" id="mobileMenu">
+      <nav class="mobile-nav">
+        <a href="index.html#inicio" class="nav-link">Inicio</a>
+        <a href="index.html#servicios" class="nav-link">Servicios</a>
+        <a href="index.html#resultados" class="nav-link">Resultados</a>
+        <a href="index.html#porque-elegirnos" class="nav-link">Por qué Elegirnos</a>
+        <a href="index.html#industrias" class="nav-link">Industrias</a>
+        <a href="index.html#testimonios" class="nav-link">Testimonios</a>
+        <a href="index.html#blog" class="nav-link">Blog</a>
+        <a href="index.html#contacto" class="nav-link">Contacto</a>
+      </nav>
+      <div class="mobile-social">
+        <a href="https://www.facebook.com/share/17918uLhT8/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/innology.services" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/innology-services/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="privacy-page-hero">
+    <div class="container">
+      <h1>Política de Privacidad</h1>
+      <p>Nos preocupamos por sus datos personales y nos comprometemos a garantizar su confidencialidad y seguridad. Conoce cómo procesamos la información recopilada y tus derechos.</p>
+    </div>
+  </section>
+
+  <!-- Privacy Content -->
+  <section class="privacy-content">
+    <div class="privacy-container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="index.html">Inicio</a>
+        <span>/</span>
+        <span>Aviso de Privacidad</span>
+      </nav>
+
+      <!-- Table of Contents -->
+      <div class="table-of-contents">
+        <h3>Contenido</h3>
+        <ul>
+          <li><a href="#recopilacion">1. Información Personal que Recopilamos</a></li>
+          <li><a href="#uso">2. ¿Por Qué Procesamos Sus Datos?</a></li>
+          <li><a href="#derechos">3. Sus Derechos</a></li>
+          <li><a href="#terceros">4. Enlaces a Otros Sitios Web</a></li>
+          <li><a href="#almacenamiento">5. Seguridad de la Información</a></li>
+          <li><a href="#cookies">6. Divulgación Legal</a></li>
+          <li><a href="#cambios">7. Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Intro Section -->
+      <div class="privacy-section">
+        <p style="font-size: 1.125rem; color: #1a1a1a; margin-bottom: 1rem;">El sitio web de Innology Services es propiedad de Innology Services, que actúa como responsable del tratamiento de sus datos personales.</p>
+        
+        <p>Hemos adoptado esta Política de Privacidad, la cual determina cómo procesamos la información recopilada por Innology Services y explica las razones por las que debemos recopilar ciertos datos personales sobre usted. Por lo tanto, debe leer esta Política de Privacidad antes de utilizar el sitio web de Innology Services.</p>
+
+        <p>Nos preocupamos por sus datos personales y nos comprometemos a garantizar su confidencialidad y seguridad.</p>
+      </div>
+
+      <!-- Section 1 -->
+      <div class="privacy-section" id="recopilacion">
+        <h2>Información Personal que Recopilamos</h2>
+        
+        <p>Cuando visita Innology Services, recopilamos automáticamente cierta información sobre su dispositivo, incluida información sobre su navegador web, dirección IP, zona horaria y algunas de las cookies instaladas en su dispositivo. Además, mientras navega por el sitio, recopilamos información sobre las páginas web individuales o productos que visualiza, los sitios web o términos de búsqueda que lo refirieron al sitio y cómo interactúa con él. A esta información recopilada automáticamente la denominamos "Información del Dispositivo".</p>
+
+        <p>Asimismo, podemos recopilar los datos personales que usted nos proporcione (incluidos, pero no limitados a: nombre, apellidos, dirección, información de pago, etc.) durante el registro, con el fin de poder cumplir con el acuerdo.</p>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="privacy-section" id="uso">
+        <h2>¿Por Qué Procesamos Sus Datos?</h2>
+        
+        <p>Nuestra máxima prioridad es la seguridad de los datos de los clientes y, por ello, procesamos únicamente los datos mínimos necesarios para mantener el sitio web. La información recopilada automáticamente se utiliza únicamente para identificar posibles casos de abuso y establecer información estadística sobre el uso del sitio. Esta información estadística no se agrega de manera que pueda identificar a un usuario en particular.</p>
+
+        <p>Usted puede visitar el sitio web sin decirnos quién es ni revelar información que permita identificarlo como un individuo específico. Sin embargo, si desea utilizar algunas funciones del sitio web, recibir nuestro boletín o proporcionar otros detalles mediante un formulario, puede facilitarnos datos personales como su correo electrónico, nombre, apellidos, ciudad de residencia, organización, número de teléfono. Usted puede optar por no proporcionarnos sus datos personales, pero en ese caso podría no acceder a ciertas funciones del sitio web. Por ejemplo, no podrá recibir nuestro boletín ni contactarnos directamente desde el sitio.</p>
+
+        <p>Los usuarios que no estén seguros de qué información es obligatoria pueden comunicarse con nosotros en <strong>informes@innologyservices.com</strong>.</p>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="privacy-section" id="derechos">
+        <h2>Sus Derechos</h2>
+        
+        <p>Si usted es residente europeo, tiene los siguientes derechos relacionados con sus datos personales:</p>
+        
+        <ul>
+          <li>Derecho a ser informado.</li>
+          <li>Derecho de acceso.</li>
+          <li>Derecho de rectificación.</li>
+          <li>Derecho de supresión.</li>
+          <li>Derecho a restringir el procesamiento.</li>
+          <li>Derecho a la portabilidad de los datos.</li>
+          <li>Derecho de oposición.</li>
+          <li>Derechos en relación con la toma de decisiones automatizadas y la elaboración de perfiles.</li>
+        </ul>
+
+        <p>Si desea ejercer estos derechos, por favor contáctenos mediante la información de contacto que aparece a continuación.</p>
+
+        <p>Además, si usted es residente europeo, le informamos que procesamos su información con el fin de cumplir contratos que podamos tener con usted (por ejemplo, si realiza un pedido en el sitio) o para perseguir nuestros intereses comerciales legítimos mencionados anteriormente. Asimismo, tenga en cuenta que su información puede ser transferida fuera de Europa, incluyendo Canadá y Estados Unidos.</p>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="privacy-section" id="terceros">
+        <h2>Enlaces a Otros Sitios Web</h2>
+        
+        <p>Nuestro sitio web puede contener enlaces a otros sitios web que no son de nuestra propiedad ni están bajo nuestro control. Tenga en cuenta que no somos responsables de las prácticas de privacidad de dichos sitios o de terceros. Le recomendamos estar atento cuando abandone nuestro sitio web y leer las declaraciones de privacidad de cada sitio que pueda recopilar información personal.</p>
+      </div>
+
+      <!-- Section 5 -->
+      <div class="privacy-section" id="almacenamiento">
+        <h2>Seguridad de la Información</h2>
+        
+        <p>Protegemos la información que usted nos proporciona en servidores informáticos en un entorno controlado y seguro, resguardado contra accesos, usos o divulgaciones no autorizadas. Mantenemos medidas de seguridad administrativas, técnicas y físicas razonables para proteger contra el acceso, uso, modificación y divulgación no autorizada de los datos personales bajo nuestro control. Sin embargo, ninguna transmisión de datos a través de Internet o de una red inalámbrica puede garantizarse por completo.</p>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="privacy-section" id="cookies">
+        <h2>Divulgación Legal</h2>
+        
+        <p>Divulgaremos cualquier información que recopilemos, usemos o recibamos si así lo requiere o permite la ley, como en cumplimiento de una citación u otro proceso legal similar, y cuando creamos de buena fe que dicha divulgación es necesaria para proteger nuestros derechos, su seguridad o la seguridad de otros, investigar fraudes o responder a una solicitud gubernamental.</p>
+      </div>
+    
+
+      <!-- Section 8 -->
+      <div class="privacy-section" id="contacto">
+        <h2>Contacto</h2>
+        
+        <p>Si tienes preguntas, inquietudes o deseas ejercer tus derechos de privacidad, contáctanos:</p>
+        
+        <div class="privacy-highlight">
+          <p>
+            <strong>Innology Services</strong><br>
+            Email: informes@innologyservices.com<br>
+            Teléfono: 246 690 7423/ 246 309 9992<br>
+            Sitio web: www.innologyservices.com
+          </p>
+        </div>
+
+        <p>Nos comprometemos a responder tus solicitudes en un plazo máximo de 30 días hábiles.</p>
+      </div>
+
+      <!-- Back Button -->
+      <a href="index.html" class="back-to-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Volver al Inicio
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-info">
+          <div class="footer-brand">
+            <img src="images/logo1.png" alt="Innology Services" class="footer-logo">
+            <p>Transformamos empresas con soluciones ERP y servicios digitales de clase mundial.</p>
+          </div>
+          <div class="footer-column">
+            <h4>Empresa</h4>
+            <ul>
+              <li><a href="index.html#inicio">Inicio</a></li>
+              <li><a href="index.html#servicios">Servicios</a></li>
+              <li><a href="index.html#contacto">Contacto</a></li>
+              <li><a href="/aviso-privacidad">Privacidad</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Síguenos</h4>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/share/17918uLhT8/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+              <a href="https://www.instagram.com/innology.services" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+              <a href="https://www.linkedin.com/company/innology-services/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Innology Services. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
