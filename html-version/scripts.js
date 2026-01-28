@@ -42,7 +42,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       // Offset para el header fijo
       const headerHeight = document.querySelector('.header').offsetHeight;
       const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = targetPosition - headerHeight - 20; // 20px extra de espacio
+      const offsetPosition = targetPosition - headerHeight - 20;
       
       // Animación suave
       window.scrollTo({
@@ -58,12 +58,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Función para actualizar el enlace activo
 function updateActiveNavLink(targetId) {
-  // Remover clase activa de todos los enlaces
   document.querySelectorAll('.nav-link').forEach(link => {
     link.classList.remove('active');
   });
   
-  // Agregar clase activa al enlace correspondiente
   const activeLink = document.querySelector(`.nav-link[href="${targetId}"]`);
   if (activeLink) {
     activeLink.classList.add('active');
@@ -73,7 +71,7 @@ function updateActiveNavLink(targetId) {
 // Actualizar enlace activo al hacer scroll
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('section[id]');
-  const scrollPosition = window.scrollY + 100; // Offset para detectar sección
+  const scrollPosition = window.scrollY + 100;
   
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
@@ -92,7 +90,6 @@ window.addEventListener('load', () => {
   if (currentHash) {
     updateActiveNavLink(currentHash);
   } else {
-    // Si no hay hash, estamos en el inicio
     updateActiveNavLink('#inicio');
   }
 });
@@ -249,15 +246,13 @@ contactForm.addEventListener('submit', (e) => {
   const formData = new FormData(contactForm);
   const data = Object.fromEntries(formData);
   
-  // Here you would typically send the data to a server
   console.log('Form submitted:', data);
   
-  // Show success message
   alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
   contactForm.reset();
 });
 
-// Infinite Carousel con Animaciones Avanzadas (Simplificado - Sin Botones Manuales)
+// Infinite Carousel para Industrias
 class InfiniteCarousel {
   constructor() {
     this.track = document.getElementById('infiniteCarouselTrack');
@@ -389,7 +384,6 @@ class InfiniteCarousel {
     });
     
     this.track.addEventListener('touchend', () => {
-      // Reanudar animación después de 1 segundo
       setTimeout(() => {
         this.track.style.animationPlayState = 'running';
       }, 1000);
@@ -397,8 +391,66 @@ class InfiniteCarousel {
   }
 }
 
-// Inicializar todo cuando el DOM esté listo
+// Reveal animation for parallax section
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+  reveals.forEach(reveal => {
+    const windowHeight = window.innerHeight;
+    const revealTop = reveal.getBoundingClientRect().top;
+    const revealPoint = 150;
+
+    if (revealTop < windowHeight - revealPoint) {
+      reveal.classList.add('active');
+    } else {
+      reveal.classList.remove('active');
+    }
+  });
+});
+
+// Counter animation for stats
+function animateCounter(element, target, suffix = '') {
+  let current = 0;
+  const increment = target / 50;
+  const duration = 2000;
+  const stepTime = duration / 50;
+  
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      current = target;
+      clearInterval(timer);
+    }
+    element.textContent = Math.floor(current);
+  }, stepTime);
+}
+
+// Intersection Observer for stats animation
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const statValues = entry.target.querySelectorAll('.stat-value[data-target]');
+      statValues.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        animateCounter(stat, target);
+      });
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+// Observe the results section
+const resultsSection = document.querySelector('.results-section');
+if (resultsSection) {
+  statsObserver.observe(resultsSection);
+}
+
+// Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicializar el carrusel infinito simplificado
   new InfiniteCarousel();
+  
+  // Add loaded class for animations
+  document.body.classList.add('loaded');
+  
+  console.log('Innology Services - Sitio cargado correctamente');
 });
