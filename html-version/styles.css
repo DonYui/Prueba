@@ -908,7 +908,7 @@ img {
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff020f 0%, #990009 100%);
+  background: linear-gradient(135deg, #ff020f 0%, #000000 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -998,7 +998,7 @@ img {
 /* Testimonials Section */
 .testimonials {
   padding: 2.5rem 0 4rem;
-  background: linear-gradient(135deg, #000000 0%, #1a0002 50%, #330005 100%);
+  background: linear-gradient(135deg, #ff020f 0%, #000000 100%);
 }
 
 .testimonials-carousel {
