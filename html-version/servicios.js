@@ -8,19 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (playButton && video) {
     playButton.addEventListener('click', function() {
-      video.play();
-      videoOverlay.style.opacity = '0';
-      videoOverlay.style.pointerEvents = 'none';
-    });
-    
-    video.addEventListener('pause', function() {
-      videoOverlay.style.opacity = '1';
-      videoOverlay.style.pointerEvents = 'auto';
-    });
-    
-    video.addEventListener('ended', function() {
-      videoOverlay.style.opacity = '1';
-      videoOverlay.style.pointerEvents = 'auto';
+      const playPromise = video.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          videoOverlay.style.opacity = '0';
+          videoOverlay.style.pointerEvents = 'none';
+        }).catch(error => {
+          console.error('Error al reproducir video:', error);
+        });
+      } else {
+        videoOverlay.style.opacity = '0';
+        videoOverlay.style.pointerEvents = 'none';
+      }
     });
   }
   
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Fade-in animation on scroll
-  const fadeElements = document.querySelectorAll('.servicio-detalle, .video-section, .parallax-section, .image-3d-section');
+  const fadeElements = document.querySelectorAll('.servicio-detalle, .companies-section, .parallax-section, .image-3d-section');
   
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
