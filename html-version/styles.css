@@ -291,8 +291,8 @@ img {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 250, 250, 0) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
