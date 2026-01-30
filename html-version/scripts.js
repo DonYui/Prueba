@@ -263,8 +263,8 @@ class InfiniteCarousel {
           <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
         </svg>`,
         title: "Manufactura",
-        description: "Optimización de producción",
-        clients: "+45 clientes"
+        description: "Implementación de módulos financieros y cadena de suministro, etc. ",
+        clients: "Panama"
       },
       {
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -273,25 +273,25 @@ class InfiniteCarousel {
           <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
         </svg>`,
         title: "Retail",
-        description: "Gestión omnicanal",
-        clients: "+30 clientes"
+        description: "Implementación de los módulos de los módulos de procure topay y SCM. ",
+        clients: "Guatemala, Panamá y República Dominicana"
       },
       {
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
         </svg>`,
-        title: "Salud",
-        description: "Cumplimiento normativo",
-        clients: "+25 clientes"
+        title: "Restaurantero",
+        description: " Soporte módulos de HCM,cadena de suministro y financieros.",
+        clients: "México"
       },
       {
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="12" y1="1" x2="12" y2="23"></line>
           <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
         </svg>`,
-        title: "Finanzas",
-        description: "Control y compliance",
-        clients: "+20 clientes"
+        title: "Bienes raíces y sector bancario",
+        description: "Desarrollo aws, snowflake, oracle y sap",
+        clients: "Chile"
       },
       {
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -300,9 +300,9 @@ class InfiniteCarousel {
           <circle cx="5.5" cy="18.5" r="2.5"></circle>
           <circle cx="18.5" cy="18.5" r="2.5"></circle>
         </svg>`,
-        title: "Logística",
-        description: "Trazabilidad completa",
-        clients: "+35 clientes"
+        title: "Servicios",
+        description: " Implementación de los módulos de los módulos de order to cash, procure to pay y SCM.",
+        clients: "Mexico, Colombia y Perú"
       },
       {
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -312,8 +312,8 @@ class InfiniteCarousel {
           <path d="M12 22V12"></path>
         </svg>`,
         title: "Distribución",
-        description: "Cadena de suministro",
-        clients: "+28 clientes"
+        description: " Implementación de módulos financieros y cadena de suministro, etc.",
+        clients: "Panamá"
       },
       {
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -321,18 +321,18 @@ class InfiniteCarousel {
           <path d="M12 2a10 10 0 0 1 10 10"></path>
           <path d="M12 12 2.1 9.1"></path>
         </svg>`,
-        title: "Agroindustria",
-        description: "Gestión de cultivos",
-        clients: "+18 clientes"
+        title: "Seguros",
+        description: " Implementación de módulos financieros, portales (isupplier / iprocurement), compras, etc.",
+        clients: "México"
       },
       {
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
           <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
         </svg>`,
-        title: "Turismo",
-        description: "Experiencia del cliente",
-        clients: "+15 clientes"
+        title: "Transporte",
+        description: " Roll Out Oracle Cloud y Desarrollo de App",
+        clients: "México"
       }
     ];
     

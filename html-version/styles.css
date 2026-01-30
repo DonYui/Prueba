@@ -421,6 +421,25 @@ img {
   }
 }
 
+/* Hero Image Effect - Same as Service Images */
+.hero-img-efecto {
+  animation: floatHeroImage 6s ease-in-out infinite !important;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.hero-img-efecto:hover {
+  transform: translateY(-10px) scale(1.05) !important;
+}
+
+@keyframes floatHeroImage {
+  0%, 100% {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(0);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(-12px);
+  }
+}
+
 @media (max-width: 1023px) {
   .hero-image {
     order: -1;
@@ -435,12 +454,20 @@ img {
     transform: scale(1.02);
   }
   
-  @keyframes floatImage {
+  .hero-img-efecto {
+    animation: floatHeroImageMobile 6s ease-in-out infinite !important;
+  }
+
+  .hero-img-efecto:hover {
+    transform: translateY(-10px) scale(1.05) !important;
+  }
+
+  @keyframes floatHeroImageMobile {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-12px);
     }
   }
 }
@@ -586,7 +613,7 @@ img {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-image: url('images/image1.png');
+  background-image: url('images/image6.gif');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -814,7 +841,10 @@ img {
 /* Industries Section - Infinite Carousel */
 .industries {
   padding: 5rem 0;
-  background: white;
+  background-image: url('images/image8.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .infinite-carousel-container {
@@ -1048,6 +1078,21 @@ img {
   
   .job-card {
     min-height: auto;
+  }
+}
+
+/* Jobs Grid Centered */
+.jobs-grid-centered {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .jobs-grid-centered {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -2215,5 +2260,137 @@ img {
   .whatsapp-float svg {
     width: 28px;
     height: 28px;
+  }
+}
+
+/* Flags Section */
+.flags-section {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.flags-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.flag-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: rgba(255, 2, 15, 0.05);
+  border: 1px solid rgba(255, 2, 15, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.flag-item:hover {
+  transform: translateY(-8px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(255, 2, 15, 0.2);
+  border-color: rgba(255, 2, 15, 0.3);
+  background: rgba(255, 2, 15, 0.1);
+}
+
+.flag-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .flags-container {
+    gap: 1rem;
+  }
+  
+  .flag-item {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Footer Reorganizado */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  text-align: right;
+}
+
+.footer-logo {
+  height: 2rem;
+  width: auto;
+}
+
+.footer-brand p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 200px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-contact h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease;
+}
+
+.contact-item:hover {
+  color: white;
+}
+
+.contact-item svg {
+  flex-shrink: 0;
+  color: #ff020f;
+}
+
+@media (min-width: 1024px) {
+  .footer-info {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .footer-top {
+    flex: 1;
+  }
+  
+  .footer-contact {
+    flex: 1;
   }
 }
