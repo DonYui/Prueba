@@ -8,6 +8,313 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Blog Page Specific Styles */
+    .blog-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    .blog-header {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .blog-grid {
+      display: grid;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(255, 2, 15, 0.15);
+    }
+
+    .blog-card-image {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .blog-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .blog-card:hover .blog-card-image img {
+      transform: scale(1.05);
+    }
+
+    .blog-card-gradient {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+    }
+
+    .blog-card-content {
+      padding: 2rem;
+    }
+
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .blog-date {
+      font-size: 0.875rem;
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .blog-date::before {
+      content: '📅';
+    }
+
+    .blog-category {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, #ff020f 0%, #990009 100%);
+      padding: 0.375rem 0.875rem;
+      border-radius: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .blog-card h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 1rem 0;
+      line-height: 1.3;
+      transition: color 0.3s ease;
+    }
+
+    .blog-card:hover h2 {
+      color: #ff020f;
+    }
+
+    .blog-excerpt {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .blog-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: #ff020f;
+      transition: all 0.3s ease;
+    }
+
+    .read-more:hover {
+      gap: 0.75rem;
+    }
+
+    .read-more svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .blog-article-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    .blog-article-page h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #1a1a1a;
+    }
+
+    .blog-article-page h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      color: #1a1a1a;
+    }
+
+    .blog-article-page p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
+
+    .blog-article-page ul,
+    .blog-article-page ol {
+      margin: 1.5rem 0 1.5rem 2rem;
+      color: #444;
+      line-height: 1.8;
+    }
+
+    .blog-article-page li {
+      margin-bottom: 0.75rem;
+    }
+
+    .article-image-hero {
+      width: 100%;
+      height: 400px;
+      border-radius: 1rem;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+
+    .article-image-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .back-to-blog {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      color: #ff020f;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-to-blog:hover {
+      gap: 0.75rem;
+    }
+
+    .search-section {
+      background: linear-gradient(135deg, rgba(255, 2, 15, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 0.875rem 1rem;
+      border: 1px solid #e5e5e5;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: #ff020f;
+      box-shadow: 0 0 0 3px rgba(255, 2, 15, 0.1);
+    }
+
+    .search-box button {
+      padding: 0.875rem 1.5rem;
+      background: linear-gradient(135deg, #ff020f 0%, #990009 100%);
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .search-box button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 2, 15, 0.3);
+    }
+
+    .filter-tags {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .filter-tag {
+      padding: 0.5rem 1rem;
+      background: white;
+      border: 2px solid #e5e5e5;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .filter-tag:hover,
+    .filter-tag.active {
+      border-color: #ff020f;
+      color: #ff020f;
+      background: rgba(255, 2, 15, 0.05);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      background: rgba(0, 0, 0, 0.02);
+      border-radius: 1rem;
+    }
+
+    .empty-state h3 {
+      font-size: 1.25rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    .empty-state p {
+      color: #999;
+    }
+
+    @media (min-width: 768px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -28,7 +335,6 @@
         <a href="index.html#contacto" class="nav-link">Contacto</a>
       </nav>
     
-
       <div class="social-desktop">
         <a href="https://www.facebook.com/share/17918uLhT8/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -101,130 +407,38 @@
     </div>
   </section>
 
-  <!-- Blog Articles -->
+  <!-- Blog Section -->
   <section class="blog-page">
-    <div class="container">
-      
-      <!-- Artículo 1 -->
-      <article class="blog-article" id="articulo-1">
-        <div class="article-header">
-          <span class="article-date">15 de Enero, 2025</span>
-          <span class="article-category">Casos de Éxito</span>
+    <div class="blog-container">
+      <!-- Search and Filter Section -->
+      <div class="search-section">
+        <div class="search-box">
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Busca artículos por título o contenido..."
+            aria-label="Buscar artículos"
+          >
+          <button onclick="handleSearch()">Buscar</button>
         </div>
-        <h2>Transformación Digital: Casos de Éxito en Latinoamérica</h2>
-        <div class="article-image" style="background: linear-gradient(135deg, #ff020f 0%, #990009 100%);">
-          <img src="images/blog-1.jpg" alt="Transformación Digital" onerror="this.style.display='none'">
+        <div class="filter-tags">
+          <button class="filter-tag active" data-filter="all" onclick="filterByCategory('all')">Todos</button>
+          <button class="filter-tag" data-filter="casos" onclick="filterByCategory('Casos de Éxito')">Casos de Éxito</button>
+          <button class="filter-tag" data-filter="tendencias" onclick="filterByCategory('Tendencias')">Tendencias</button>
+          <button class="filter-tag" data-filter="guias" onclick="filterByCategory('Guías')">Guías</button>
         </div>
-        <div class="article-content">
-          <p class="article-intro">La transformación digital ha dejado de ser una opción para convertirse en una necesidad imperativa para las empresas que buscan mantenerse competitivas en el mercado actual.</p>
-          
-          <h3>El Desafío de la Modernización</h3>
-          <p>En Latinoamérica, las empresas enfrentan desafíos únicos cuando se trata de implementar tecnología de vanguardia. Desde la infraestructura tecnológica hasta la resistencia al cambio cultural, los obstáculos pueden parecer abrumadores. Sin embargo, numerosas organizaciones han demostrado que es posible superar estas barreras y alcanzar resultados extraordinarios.</p>
-          
-          <h3>Caso 1: Manufactura Mexicana S.A.</h3>
-          <p>Esta empresa manufacturera con más de 500 empleados logró reducir sus tiempos de producción en un 40% después de implementar un sistema ERP integrado. El proyecto incluyó:</p>
-          <ul>
-            <li>Automatización de procesos de inventario</li>
-            <li>Integración de líneas de producción con el sistema central</li>
-            <li>Dashboard en tiempo real para toma de decisiones</li>
-            <li>Capacitación intensiva del personal</li>
-          </ul>
-          
-          <h3>Caso 2: Retail Colombia Express</h3>
-          <p>Con más de 200 puntos de venta, esta cadena de retail implementó una solución omnicanal que unificó sus operaciones físicas y digitales. Los resultados incluyeron:</p>
-          <ul>
-            <li>Incremento del 65% en ventas online</li>
-            <li>Reducción del 30% en costos operativos</li>
-            <li>Mejora significativa en la experiencia del cliente</li>
-          </ul>
-          
-          <h3>Lecciones Aprendidas</h3>
-          <p>El éxito en la transformación digital no depende únicamente de la tecnología, sino de una estrategia integral que considere personas, procesos y cultura organizacional. Las empresas que logran resultados excepcionales comparten características comunes: liderazgo comprometido, objetivos claros y una mentalidad de mejora continua.</p>
-        </div>
-      </article>
+      </div>
 
-      <div class="article-divider"></div>
+      <!-- Blog Grid -->
+      <div class="blog-grid" id="blogGrid">
+        <!-- Los artículos se cargan aquí dinámicamente -->
+      </div>
 
-      <!-- Artículo 2 -->
-      <article class="blog-article" id="articulo-2">
-        <div class="article-header">
-          <span class="article-date">10 de Enero, 2025</span>
-          <span class="article-category">Tendencias</span>
-        </div>
-        <h2>5 Tendencias en ERP que Debes Conocer para 2025</h2>
-        <div class="article-image" style="background: linear-gradient(135deg, #1a1a1a 0%, #404040 100%);">
-          <img src="images/blog-2.jpg" alt="Tendencias ERP 2025" onerror="this.style.display='none'">
-        </div>
-        <div class="article-content">
-          <p class="article-intro">El mundo de los sistemas ERP está evolucionando rápidamente. Conoce las tendencias que definirán el futuro de la gestión empresarial.</p>
-          
-          <h3>1. Inteligencia Artificial Integrada</h3>
-          <p>Los sistemas ERP modernos están incorporando capacidades de IA para análisis predictivo, automatización de tareas repetitivas y asistentes virtuales que mejoran la productividad de los usuarios.</p>
-          
-          <h3>2. ERP en la Nube como Estándar</h3>
-          <p>La migración a soluciones cloud ya no es tendencia, es el estándar. Las empresas buscan flexibilidad, escalabilidad y reducción de costos de infraestructura que solo la nube puede ofrecer.</p>
-          
-          <h3>3. Experiencia de Usuario Mejorada</h3>
-          <p>Las interfaces modernas de ERP están adoptando diseños intuitivos inspirados en aplicaciones de consumo, facilitando la adopción y reduciendo tiempos de capacitación.</p>
-          
-          <h3>4. Integración con IoT</h3>
-          <p>La conexión entre dispositivos físicos y sistemas ERP permite una visibilidad sin precedentes de las operaciones, desde el piso de producción hasta la cadena de suministro.</p>
-          
-          <h3>5. Análisis en Tiempo Real</h3>
-          <p>Los dashboards y herramientas de business intelligence integradas permiten tomar decisiones basadas en datos actualizados al segundo, no en reportes del mes anterior.</p>
-        </div>
-      </article>
-
-      <div class="article-divider"></div>
-
-      <!-- Artículo 3 -->
-      <article class="blog-article" id="articulo-3">
-        <div class="article-header">
-          <span class="article-date">5 de Enero, 2025</span>
-          <span class="article-category">Guías</span>
-        </div>
-        <h2>ROI en Implementaciones ERP: Cómo Medir el Éxito</h2>
-        <div class="article-image" style="background: linear-gradient(135deg, #0066cc 0%, #004499 100%);">
-          <img src="images/blog-3.jpg" alt="ROI ERP" onerror="this.style.display='none'">
-        </div>
-        <div class="article-content">
-          <p class="article-intro">¿Cuál es el verdadero retorno de tu inversión en ERP? Aprende cómo medir correctamente el ROI y qué métricas son críticas para evaluar el éxito de tu implementación.</p>
-          
-          <h3>Por qué Medir el ROI es Fundamental</h3>
-          <p>Una implementación de ERP representa una inversión significativa en tiempo, recursos y capital. Sin métricas claras de éxito, es imposible justificar la inversión o identificar áreas de mejora.</p>
-          
-          <h3>Métricas Clave para Evaluar</h3>
-          
-          <h4>Eficiencia Operativa</h4>
-          <ul>
-            <li>Tiempo de ciclo de procesos antes y después</li>
-            <li>Reducción de errores manuales</li>
-            <li>Horas-hombre ahorradas en tareas repetitivas</li>
-          </ul>
-          
-          <h4>Impacto Financiero</h4>
-          <ul>
-            <li>Reducción en costos de inventario</li>
-            <li>Mejora en el flujo de efectivo</li>
-            <li>Disminución de costos operativos</li>
-          </ul>
-          
-          <h4>Satisfacción del Usuario</h4>
-          <ul>
-            <li>Tasa de adopción del sistema</li>
-            <li>Encuestas de satisfacción del usuario</li>
-            <li>Reducción en tickets de soporte</li>
-          </ul>
-          
-          <h3>Calculando el ROI</h3>
-          <p>La fórmula básica es: ROI = (Beneficios - Costos) / Costos x 100</p>
-          <p>Sin embargo, es importante considerar tanto beneficios tangibles (ahorros medibles) como intangibles (mejor toma de decisiones, satisfacción del cliente).</p>
-          
-          <h3>Timeline Realista</h3>
-          <p>La mayoría de las implementaciones ERP muestran ROI positivo entre 12 y 24 meses después del go-live. Es importante establecer expectativas realistas y medir continuamente el progreso.</p>
-        </div>
-      </article>
-
+      <!-- Empty State -->
+      <div class="empty-state hidden" id="emptyState">
+        <h3>No se encontraron artículos</h3>
+        <p>Intenta ajustar tus criterios de búsqueda o filtro</p>
+      </div>
     </div>
   </section>
 
@@ -319,10 +533,15 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2025 Innology Services. Todos los derechos reservados.</p>
+        <div class="footer-links">
+          <a href="aviso-privacidad.html">Aviso de Privacidad</a>
+          <a href="#terminos">Términos de Uso</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script src="scripts.js"></script>
+  <script src="blog-loader.js"></script>
 </body>
 </html>
