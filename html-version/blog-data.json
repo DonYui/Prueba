@@ -14,7 +14,7 @@
       "title": "5 Tendencias en ERP que Debes Conocer para 2025",
       "date": "10 de Enero, 2025",
       "category": "Tendencias",
-      "image": "images/blog-2.jpg",
+      "image": "images/blog_ERP.png",
       "gradient": "linear-gradient(135deg, #1a1a1a 0%, #404040 100%)",
       "excerpt": "El mundo de los sistemas ERP está evolucionando rápidamente. Conoce las tendencias que definirán el futuro de la gestión empresarial.",
       "content": "<h3>1. Inteligencia Artificial Integrada</h3><p>Los sistemas ERP modernos están incorporando capacidades de IA para análisis predictivo, automatización de tareas repetitivas y asistentes virtuales que mejoran la productividad de los usuarios.</p><h3>2. ERP en la Nube como Estándar</h3><p>La migración a soluciones cloud ya no es tendencia, es el estándar. Las empresas buscan flexibilidad, escalabilidad y reducción de costos de infraestructura que solo la nube puede ofrecer.</p><h3>3. Experiencia de Usuario Mejorada</h3><p>Las interfaces modernas de ERP están adoptando diseños intuitivos inspirados en aplicaciones de consumo, facilitando la adopción y reduciendo tiempos de capacitación.</p><h3>4. Integración con IoT</h3><p>La conexión entre dispositivos físicos y sistemas ERP permite una visibilidad sin precedentes de las operaciones, desde el piso de producción hasta la cadena de suministro.</p><h3>5. Análisis en Tiempo Real</h3><p>Los dashboards y herramientas de business intelligence integradas permiten tomar decisiones basadas en datos actualizados al segundo, no en reportes del mes anterior.</p>"
@@ -24,7 +24,7 @@
       "title": "ROI en Implementaciones ERP: Cómo Medir el Éxito",
       "date": "5 de Enero, 2025",
       "category": "Guías",
-      "image": "images/blog-3.jpg",
+      "image": "images/blog_ROI.png",
       "gradient": "linear-gradient(135deg, #0066cc 0%, #004499 100%)",
       "excerpt": "¿Cuál es el verdadero retorno de tu inversión en ERP? Aprende cómo medir correctamente el ROI y qué métricas son críticas para evaluar el éxito de tu implementación.",
       "content": "<h3>Por qué Medir el ROI es Fundamental</h3><p>Una implementación de ERP representa una inversión significativa en tiempo, recursos y capital. Sin métricas claras de éxito, es imposible justificar la inversión o identificar áreas de mejora.</p><h3>Métricas Clave para Evaluar</h3><h4>Eficiencia Operativa</h4><ul><li>Tiempo de ciclo de procesos antes y después</li><li>Reducción de errores manuales</li><li>Horas-hombre ahorradas en tareas repetitivas</li></ul><h4>Impacto Financiero</h4><ul><li>Reducción en costos de inventario</li><li>Mejora en el flujo de efectivo</li><li>Disminución de costos operativos</li></ul><h4>Satisfacción del Usuario</h4><ul><li>Tasa de adopción del sistema</li><li>Encuestas de satisfacción del usuario</li><li>Reducción en tickets de soporte</li></ul><h3>Calculando el ROI</h3><p>La fórmula básica es: ROI = (Beneficios - Costos) / Costos x 100</p><p>Sin embargo, es importante considerar tanto beneficios tangibles (ahorros medibles) como intangibles (mejor toma de decisiones, satisfacción del cliente).</p><h3>Timeline Realista</h3><p>La mayoría de las implementaciones ERP muestran ROI positivo entre 12 y 24 meses después del go-live. Es importante establecer expectativas realistas y medir continuamente el progreso.</p>"
@@ -34,7 +34,7 @@
       "title": "Control presupuestal con Oracle Fusion: haz que cada peso cuente",
       "date": "5 de Enero, 2025",
       "category": "Guías",
-      "image": "images/blog-3.jpg",
+      "image": "images/blog_oracle1.png",
       "gradient": "linear-gradient(135deg, #0066cc 0%, #004499 100%)",
       "excerpt": "En Innology Services sabemos que mantener el control de los gastos no es tarea fácil. Por eso, hoy te mostramos cómo Oracle Fusion ayuda a las empresas a planificar y monitorear su presupuesto de forma sencilla, precisa y totalmente digital.",
       "content": "<h3>¿Qué es el control presupuestal?</h3><p>Es una herramienta que permite saber en qué, cómo y cuándo se gasta el dinero de la empresa.Con Oracle Fusion, este proceso se vuelve automático: el sistema controla límites de gasto, aprueba transacciones y genera alertas cuando se acerca al tope del presupuesto.</p><h3>Ventajas para tu empresa</h3><h4>Transforma tus números en decisiones que impulsen tu éxito.</h4><ul><li>Visión clara de los gastos en tiempo real.</li><li>Prevención de errores y compras fuera del presupuesto.</li><li>Reportes y gráficos para decisiones más rápidas.</li><li>Alertas automáticas ante desviaciones.</li><li> Integración con módulos de pagos, proyectos y contabilidad.</li></ul><h4>Buenas prácticas para aprovechar Oracle Fusion</h4><ul><li>Define tus presupuestos por área o proyecto</li><li>Revisa los reportes de ejecución cada mes.</li><li>Configura alertas y flujos de aprobación.</li><li>Capacita a tu equipo para interpretar los resultados.</li><p>El control presupuestal no es solo una función contable, es una estrategia para hacer crecer tu negocio con inteligencia.En Innology Services, te ayudamos a implementar soluciones Oracle que te permiten tomar el control de tus finanzas y lograr resultados reales.</p>"
