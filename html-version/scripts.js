@@ -118,33 +118,33 @@ document.addEventListener('DOMContentLoaded', function() {
   // Testimonials Carousel
   const testimonialsData = [
     {
-      text: "La implementación de SAP con Innology Services transformó completamente nuestra operación. Redujimos tiempos de cierre contable de 15 días a solo 3.",
-      name: "Carlos Mendoza",
-      role: "Director de Finanzas - Grupo Industrial del Norte",
+      text: "Innology Services transformó nuestra empresa con su excelente soporte técnico y soluciones innovadoras. ¡Altamente recomendados!",
+      name: "Matías Rodriguez",
+      role: "",
       initials: "CM"
     },
     {
-      text: "El equipo de Innology Services entendió perfectamente nuestras necesidades del sector retail. La integración omnicanal que logramos nos posicionó como líderes en experiencia de cliente.",
-      name: "Ana García",
-      role: "CEO - Cadena Comercial del Bajío",
+      text: "La consultoría de Innology Services nos ayudó a optimizar procesos y mejorar nuestra eficiencia operativa notablemente.",
+      name: "Isabella Hernández",
+      role: "",
       initials: "AG"
     },
     {
-      text: "Migramos de un sistema legacy de más de 20 años sin perder un solo día de operación. La planificación meticulosa y la ejecución impecable del equipo de Innology Services hicieron posible lo que creíamos imposible.",
-      name: "Roberto Hernández",
-      role: "CTO - Manufactura Avanzada S.A.",
+      text: "La implementación de sistemas por parte de Innology Services ha optimizado nuestros procesos. Su equipo es profesional y siempre está disponible para resolver dudas. ¡Gran experiencia!",
+      name: "Ana López",
+      role: "",
       initials: "RH"
     },
     {
-      text: "La capacitación que recibió nuestro equipo fue excepcional. Hoy operamos el sistema de forma autónoma y seguimos descubriendo funcionalidades que mejoran nuestra eficiencia.",
-      name: "María Fernández",
-      role: "Directora de Operaciones - Logística Express",
+      text: "El soporte técnico de Innology Services ha sido clave para optimizar nuestros procesos internos, aumentando la productividad de todo el equipo. ¡Altamente recomendados!",
+      name: "Aurora Escalante",
+      role: "",
       initials: "MF"
     },
     {
-      text: "El ROI de nuestra implementación superó las expectativas en el primer año. La inversión se recuperó en 8 meses gracias a la optimización de procesos.",
-      name: "Jorge Ramírez",
-      role: "CFO - Distribuidora Nacional",
+      text: "Innology Services ha transformado nuestro enfoque tecnológico, mejorando la eficiencia y adaptabilidad de nuestra organización.",
+      name: "Samuel Gonzalez",
+      role: "",
       initials: "JR"
     }
   ];
